@@ -1,10 +1,7 @@
 const AppModel = require('./AppModel')
 
-
-
     module.exports.getTodo = async (req, res) =>{
         const myMeal = await TodoModel.find();
-
         res.send(myTodo)
     }
 
