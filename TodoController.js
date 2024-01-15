@@ -10,7 +10,7 @@ const AppModel = require('./AppModel')
 
     module.exports.saveTodo = async (req, res) =>{
         const {title} = req.body;
-        MealModel.create({title})
+        AppModel.create({title})
         .then((data)=> {console.log("Todo added")
     res.send(data)
     })
@@ -19,7 +19,7 @@ const AppModel = require('./AppModel')
 
     module.exports.deleteTodo = async (req, res) =>{
         const {_id} = req.body;
-        TodoModel.findByIdAndDelete(_id)
+        AppModel.findByIdAndDelete(_id)
         .then(()=> res.send("Todo deleted"))
     }
 
@@ -27,6 +27,6 @@ const AppModel = require('./AppModel')
 
     module.exports.editTodo = async (req, res) =>{
         const {_id, title} = req.body;
-        MealModel.findByIdAndUpdate(_id, {title})
+        AppModel.findByIdAndUpdate(_id, {title})
         .then(()=> res.send("Edited a Todo"))
     }
