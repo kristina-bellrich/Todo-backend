@@ -1,14 +1,11 @@
 const { Router} =require("express");
-const { getRecipe, saveRecipe, deleteRecipe, editRecipe } = require("./AppController");
+const { getTodo, saveTodo, deleteTodo, editTodo } = require("./AppController");
 const router= Router();
-router.get('/', getRecipe)
-router.post('/saveRecipe', saveRecipe)
-router.post('/deleteRecipe', deleteRecipe)
-router.put('/editRecipe', editRecipe)
 
-router.get("/", getMeal);
-router.post("/saveMeals", saveMeals);
-router.post("/deleteMeal", deleteMeal);
-router.post("/editMeal", editMeal);
+
+router.get("/", getTodo);
+router.post("/saveTodo", saveTodo);
+router.post("/deleteTodo", deleteTodo);
+router.post("/editTodo", editTodo);
 
 module.exports = router
